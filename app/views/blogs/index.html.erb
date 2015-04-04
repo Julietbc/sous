@@ -1,0 +1,16 @@
+<h1>Listing Blogs</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.title %></td>
+      <td><%= blog.text %></td>
+    </tr>
+  <% end %>
+   <%= link_to 'New Blog', new_blog_path %>
+</table>
