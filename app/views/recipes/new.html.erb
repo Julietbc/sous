@@ -1,0 +1,19 @@
+<%= form_for :recipe, url: recipes_path do |r| %>
+  <p>
+    <%= r.label :name %><br>
+    <%= r.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= r.label :text %><br>
+    <%= r.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= r.submit %>
+  </p>
+
+  <%= link_to 'New Recipe', new_recipe_path %>
+  <%= link_to 'Back', recipes_path %>
+
+<% end %>
