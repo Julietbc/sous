@@ -1,0 +1,21 @@
+<h1>Editing Review</h1>
+ 
+<%= form_for :review, url: reviews_path(@review), method: :patch do |r| %>
+
+  <p>
+    <%= r.label :title %><br>
+    <%= r.text_field :text%>
+  </p>
+ 
+  <p>
+    <%= r.label :text %><br>
+    <%= r.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= r.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', reviews_path %>

@@ -1,17 +1,21 @@
-<h1>Sous</h1>
+<h1>SousRECIPE</h1>
  
 <table>
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th>Name</th>
+    <th>Instructions</th>
   </tr>
  
   <% @recipes.each do |recipe| %>
     <tr>
       <td><%= recipe.name %></td>
       <td><%= recipe.text %></td>
+      <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+       <td><%= link_to 'Destroy', recipes_path(recipe),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
-   <%= link_to 'New Blog', new_blog_path %>
    <%= link_to 'New Recipe', new_recipe_path %>
 </table>
+

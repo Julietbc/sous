@@ -4,17 +4,25 @@ class BlogsController < ApplicationController
 		@blogs = Blog.all
 	end
 
+
+
 	def show
 		@blog = Blog.find(params[:id])
 	end
+
+
 
 	def new
 		@article = Blog.new
 	end
 
+
+
 	def edit
   		@blog = Blog.find(params[:id])
 	end
+
+	
 
 	def create
 		@blog = Blog.new(blog_params)
@@ -36,6 +44,8 @@ class BlogsController < ApplicationController
 	    render 'edit'
 	  end
 	end
+
+
 
 	def destroy
 	  @blog = Blog.find(params[:id])

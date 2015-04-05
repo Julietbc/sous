@@ -1,0 +1,19 @@
+<%= form_for :review, url: reviews_path do |r| %>
+  <p>
+    <%= r.label :title %><br>
+    <%= r.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= r.label :text %><br>
+    <%= r.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= r.submit %>
+  </p>
+
+  <%= link_to 'New Review', new_review_path %>
+  <%= link_to 'Back', reviews_path %>
+
+<% end %>
