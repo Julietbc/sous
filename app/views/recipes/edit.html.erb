@@ -1,6 +1,6 @@
 <h1>Editing Recipe</h1>
  
-<%= form_for :recipe, url: recipes_path(@recipe), method: :patch do |r| %>
+<%= form_for :recipe, url: recipe_path(@recipe), method: :patch do |r| %>
 
   <p>
     <%= r.label :name %><br>

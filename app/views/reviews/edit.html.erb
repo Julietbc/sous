@@ -1,10 +1,10 @@
 <h1>Editing Review</h1>
  
-<%= form_for :review, url: reviews_path(@review), method: :patch do |r| %>
+<%= form_for :review, url: review_path(@review), method: :patch do |r| %>
 
   <p>
     <%= r.label :title %><br>
-    <%= r.text_field :text%>
+    <%= r.text_field :title%>
   </p>
  
   <p>

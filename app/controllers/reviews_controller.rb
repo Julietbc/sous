@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+	
 	def index
 		@reviews = Review.all
 	end
@@ -41,6 +42,14 @@ class ReviewsController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+
+	def destroy
+	  @review = Blog.find(params[:id])
+	  @review.destroy
+	 
+	  redirect_to reviews_path
 	end
 
 	

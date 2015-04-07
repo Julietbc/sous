@@ -10,6 +10,7 @@
     <tr>
       <td><%= recipe.name %></td>
       <td><%= recipe.text %></td>
+      <td><%= link_to 'Show', recipe_path(recipe) %></td>
       <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
        <td><%= link_to 'Destroy', recipes_path(recipe),
         method: :delete,
