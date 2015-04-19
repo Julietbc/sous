@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+
+	before_action :authenticate_user!
 	
 	def index
 		@reviews = Review.all
@@ -24,9 +26,9 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = Review.new(review_params)
-
+ 		@review.user_id = current_user.id
 		if @review.save
-			redirect_to @review
+		  redirect_to @review
 		else
 			render 'new'
 		end

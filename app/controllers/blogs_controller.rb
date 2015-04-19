@@ -1,7 +1,9 @@
 class BlogsController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def index
-		@blogs = Blog.all
+		@blogs = Blog.where(user_id: current_user.id)
 	end
 
 
@@ -26,7 +28,7 @@ class BlogsController < ApplicationController
 
 	def create
 		@blog = Blog.new(blog_params)
- 
+ 		@blog.user_id = current_user.id
 		if @blog.save
 		  redirect_to @blog
 		else
@@ -60,7 +62,7 @@ class BlogsController < ApplicationController
 	private
 
 	def blog_params
-		params.require(:blog).permit(:title, :text)
+		params.require(:blog).permit(:title, :text, )
 	end
 	
 end

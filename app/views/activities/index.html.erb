@@ -1,0 +1,6 @@
+<h1>Activities#index</h1>
+<% @activities.each do |activity| %>
+	<td><%= activity.master_id %> </td>
+	<td><%= activity.master_type %></td>
+	<tb><%= activity.master.user.email %><td>
+	<% end %>

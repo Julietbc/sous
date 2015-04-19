@@ -11,11 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407094847) do
+ActiveRecord::Schema.define(version: 20150418114939) do
 
   create_table "activities", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "master_id"
+    t.string   "master_type"
   end
 
   create_table "blogs", force: :cascade do |t|
@@ -23,21 +25,30 @@ ActiveRecord::Schema.define(version: 20150407094847) do
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id"
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
 
   create_table "reviews", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
