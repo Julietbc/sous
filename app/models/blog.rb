@@ -11,6 +11,6 @@ class Blog < ActiveRecord::Base
 
                     after_update do |blog|
                     	Activity.create(master_id: blog.id, master_type: blog.class.name)
-                    	enddz
+                    	end
 
 end
